@@ -1,0 +1,40 @@
+{% extends "base.html" %} 
+{% load static %}
+{% block title %}Home - Price Input{% endblock %}
+{% block content%}
+<section class="">
+    <div class="bg-white">
+        <div class="p-5">
+            <div class="p-2">
+                {% if search %}
+                <h1 class="text-2xl"> you searched for: <span class="italic fon-['Times']">"{{search}}"</span> ""</h1>
+            </div>
+            <div class="p-10">
+                <h1 class="mb-5 text-xl">Results are listed below:</h1>
+                <div class="">
+                    <hr>
+                    
+                    <div class="flex flex-wrap justify-center items-center p-4">
+                        {% for prods in prod %}
+                        <div class="p-5 hover:shadow-md hover:rounded h-96">
+                            
+                            <center>
+                                <img src="{{prods.productImage.url}}" width="50%" alt="productImage">
+                                <p class="text-red-700"><span class="text-black">Price: </span> <span class="font-bold text-xl">GHC {{prods.productPrice}}.00</span></p>
+                                <h1 class="text-xl text-red-500"><a href="#" class="hover:text-red-900"><span class="text-black">Item Name:</span>  {{prods.productName}}</a></h1>
+                                <p class="text-gray-400"><span class="text-black">Category: </span>{{prods.productCat}}</p>
+                                <p class="text-red-400"><span class="text-black">Store/Company: </span>{{prods.productStore}}</p>
+                                <p class="text-blue-600"><span class="text-black">Website of Company: </span><a href="{{prods.productWebAddress}}">{{prods.productWebAddress}}</a></p>
+                            </center>
+                        </div>
+                        {%endfor%}
+                    </div>
+                </div>
+            </div>
+            {%else%}
+                u've searched for nothing'
+            {%endif%}
+        </div>
+    </div>
+</section>
+{% endblock %}

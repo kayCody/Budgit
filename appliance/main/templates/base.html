@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS only -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <!------// tawind stuffs//-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+        <!---------NEW from react-------->
+        <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    </head>
+    <body class="bg-gray-200">
+        <header class="descrip bg-white shadow-lg sticky top-0 z-10 ">
+            <section class="container mx-auto">
+                <div class="discrip-info p-3 flex flex-wrap justify-between items-center ">
+                    <div class="">
+                        <h1 class="logo"><span class="text-4xl text-red-600 font-bold"><a href="{% url 'home' %}">BudGit.</a></span></h1>
+                    </div>
+                    <div class="navbar">
+                        <ul class="text-md font-['Roboto'] font-extrabold flex gap-5">
+                            <li class="hover:text-red-500 hover:border-1 hover:border-b  border-red-900"><a href="{% url 'home'%}"><i class="fa-solid fa-house-user mr-2"></i>Home</a></li>
+                            <li class="hover:text-red-500 hover:border-1 hover:border-b  border-red-900"><a href="{% url 'about'%}">About</a></li>
+                            <li class="hover:text-red-500 hover:border-1 hover:border-b  border-red-900"><a href="{% url 'home'%}"><i class="fa-solid fa-pen-nib mr-2"></i>Category</a></li>
+                            <li class="hover:text-red-500 hover:border-1 hover:border-b  border-red-900"><a href="{% url 'contact'%}"><i class="fa-regular fa-address-book mr-2"></i>Contact - us</a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                <div class="nav"></div>
+            </section>
+        </header>
+
+        <!---// main-body // -->
+        <div class="main-body">{% block content %}{%endblock%}</div>
+        
+        <!---// footer //-->
+        <footer class="end bg-gray-200">
+            <div class="container mx-auto p-4">
+                <div class="flex flex-wrap justify-between items-center">
+                    <div class="">
+                        <h1 class="text-red-800">Subscription</h1>
+                        <div class="">
+                            <form action="">
+                                {% csrf_token %}
+                                <div>
+                                    <h1>Suscribe to our Newsletter</h1>
+                                    <input type="email" class="p-2" name="email" id="email">
+                                    <button class="rounded-md bg-red-500 hover-bg-800 p-2" type="submit">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="">
+                            <h1 class="">Email: <span>admin@budgit.com</span></h1>
+                        </div>
+                    </div>
+                    <div class="">
+                        <h1 class="text-red-800">Quick Links</h1>
+                        <div class="">
+                            <h1 class="text-black ">Home</h1>
+                            <h1 class="text-black ">About us</h1>
+                            <h1 class="text-black ">Contact us</h1>
+                            <h1 class="text-black ">Tools</h1>
+                            <h1 class="text-black ">FAQs</h1>
+                        </div>
+                    </div>
+                    <div class="">
+                        <h1 class="text-red-800">Quick Links</h1>
+                        <div class="">
+                            <h1 class="text-black ">Home</h1>
+                            <h1 class="text-black ">About us</h1>
+                            <h1 class="text-black ">Contact us</h1>
+                            <h1 class="text-black ">Tools</h1>
+                            <h1 class="text-black ">FAQs</h1>
+                        </div>
+                    </div>
+                    <div class="">
+                        <h1 class="text-red-800">Quick Links</h1>
+                        <div class="">
+                            <h1 class="text-black ">Computers & Accessories</h1>
+                            <h1 class="text-black ">Mobile Phone & Accessories</h1>
+                            <h1 class="text-black ">Kitchen Appliances</h1>
+                            <h1 class="text-black ">Capentary Tools</h1>
+                            <h1 class="text-black ">Computers & Accessories</h1>
+                        </div>
+                    </div>
+                    <div class="text-md">
+                        <label for="title" class="text-red-500 text-lg font-bold">Locate us</label>
+                        <h1 class=" mb-2"><i class="fa-solid fa-location-dot mr-2"></i> BuDGit. <br> <span class="ml-6">P. O. Box, KS 001</span><br><span class="ml-6">Adum - Kumasi, Ghana</h1>
+                        
+                        <h1 class=" mb-2"><i class="fa-solid fa-phone mr-2"></i>Office: +233 (0) 240745381<br> <span class="ml-6">Hotline: +233 (0) 240745381</span></h1>
+          
+                        <h1 class=""><i class="fa-solid fa-envelope mr-2"></i><a href="mailto:admin@redelectronics.com">admin@redelectronics.com</a><br><span class="ml-6"><a href="mailto:info@redelectronics.com">info@redelectronics.com</a></span></h1>
+                    </div>
+                </div>
+                <div class="flex flex-wrap sm:flex-wrap md:flex-wrap lg:flex-row gap-5 p-2 items-center justify-between  text-md mt-10">
+                    <div class="">
+                      <h6 class="mb-3 font-bold">&copy;2022, BuDGit.: <span>All Rights Reserved</span></h6>
+                      <div class="text-sm ">
+                        <div class="flex flex-wrap gap-2">
+                          <h1 class="underline"><a href="#">Terms & Condition</a></h1>
+                          <h1 class=" underline"><a href="#">Terms of use</a></h1>
+                          <h1 class="underline"><a href="#">Privacy Policy</a></h1>
+                          <h1 class="underline"><a href="#">Cocoa Smuggling and Actions</a></h1>
+                          <h1 class="underline"><a href="#">SiteMap</a></h1>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex flex-wrap sm:flex-wrap md:flex-wrap lg:flex-row gap-5 justify-center hover:text-green-500">
+                      <label class=" "><a class="hover:text-green-400" href="{% url 'home'%}"><i class="fa-solid fa-house mr-2"></i>Home</a></label>
+                      <label class=""><a class="hover:text-green-400" href="{% url 'about'%}"><i class="fa-solid fa-house-signal mr-2"></i>About</a></label>
+                      <label class=""><a href="#"><i class="fa-solid fa-question mr-2"></i>FAQs</a></label>
+                      <label class=""><a href="{% url 'contact'%}"><i class="fa-solid fa-address-book mr-2"></i>Contact-US</a></label>
+                    </div>
+                  </div>
+            </div>
+        </footer>
+
+        <!---// JAVASCRIPT CDNS //-->
+        <!-- JavaScript Bundle with Popper -->
+        <!---// tw-elements bundle//-->
+        <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+    </body>
+</html>
