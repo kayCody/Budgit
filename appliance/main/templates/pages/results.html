@@ -16,16 +16,13 @@
                     
                     <div class="flex flex-wrap justify-center items-center p-4">
                         {% for prods in prod %}
-                        <div class="p-5 hover:shadow-md hover:rounded h-96">
-                            
-                            <center>
-                                <img src="{{prods.productImage.url}}" width="50%" alt="productImage">
-                                <p class="text-red-700"><span class="text-black">Price: </span> <span class="font-bold text-xl">GHC {{prods.productPrice}}.00</span></p>
-                                <h1 class="text-xl text-red-500"><a href="#" class="hover:text-red-900"><span class="text-black">Item Name:</span>  {{prods.productName}}</a></h1>
-                                <p class="text-gray-400"><span class="text-black">Category: </span>{{prods.productCat}}</p>
-                                <p class="text-red-400"><span class="text-black">Store/Company: </span>{{prods.productStore}}</p>
-                                <p class="text-blue-600"><span class="text-black">Website of Company: </span><a href="{{prods.productWebAddress}}">{{prods.productWebAddress}}</a></p>
-                            </center>
+                        <div class="p-5 hover:shadow-md hover:rounded">
+                            <img src="{{prods.productImage.url}}" width="50%" alt="productImage">
+                            <p class="text-red-700"><span class="text-black"></span> <span class="font-bold text-xl">{{prods.productPrice}}.00</span></p>
+                            <h1 class="text-sm text-red-500"><a href="{{prods.productWebAddress}}" class="hover:text-red-900"><span class="text-black text-"></span>  {{prods.productName}}</a></h1>
+                            <p class="text-gray-400"><span class="text-black"></span>{{prods.productCat}}</p>
+                            <p class="text-md font-bold">{{prods.store}}</p>
+                            <a href="{{prods.productWebAddress}}"><button class="p-2 bg-red-700 hover:bg-red-900 rounded text-white">View More Info</button></a>
                         </div>
                         {%endfor%}
                     </div>

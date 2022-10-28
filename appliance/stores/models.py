@@ -25,12 +25,11 @@ STORES = [
 class Melcom(models.Model):
     id = models.AutoField(blank=False, null=False, primary_key=True, unique=True)
     productName = models.CharField(max_length=120, blank=False, null=False)
-    productCat = models.CharField(max_length=120, blank=False, null=False, choices=CATEGORY,)
-    productPrice = models.CharField(blank=False, null=False, max_length=6)
-    productDespription = models.CharField(max_length=120, blank=True, null=True, )
+    productCat = models.CharField(max_length=120, blank=False, null=False,choices=CATEGORY)
+    productPrice = models.CharField(blank=False, null=False, max_length=100)
+    store = models.CharField(max_length=120, blank=True, null=True, choices=STORES)
     productImage = models.ImageField(default = 'default.jpg', upload_to = 'melcom/')
-    productStore = models.CharField(max_length=120, blank=True, null=True, choices=STORES,)
-    productWebAddress = models.URLField(blank=False, null=False)
+    productWebAddress = models.CharField(max_length=120, blank=True, null=False)
     dateadded = models.DateField(blank=False, null=False, auto_now=True)
     
     def save(self):
@@ -43,3 +42,4 @@ class Melcom(models.Model):
             
     def __str__(self):
         return self.productName
+    
